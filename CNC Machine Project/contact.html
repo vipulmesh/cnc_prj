@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Centre Of Excellence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ----------- Global Styles ----------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2b2b2b, #3d3d3d);
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .contact-container {
+      background: #1e1e1e;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+      width: 90%;
+      max-width: 900px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      border: 1px solid #ff4d4d33;
+    }
+
+    h2 {
+      color: #ff4d4d;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* ----------- Faculty Section ----------- */
+    .faculty-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .faculty-card {
+      background: #2d2d2d;
+      border-radius: 15px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      border: 1px solid #ff4d4d33;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faculty-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255, 77, 77, 0.5);
+    }
+
+    .faculty-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      border: 2px solid #ff4d4d;
+    }
+
+    .faculty-card h4 {
+      margin: 5px 0;
+      color: #ff4d4d;
+    }
+
+    .faculty-card p {
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    /* ----------- Contact Info ----------- */
+    .contact-info {
+      background: #2d2d2d;
+      border-left: 5px solid #ff4d4d;
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 1.7;
+    }
+
+    .contact-info h3 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    .contact-info strong {
+      color: #e0e0e0;
+    }
+
+    /* ----------- Map Container ----------- */
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .map-container:hover {
+      transform: scale(1.02);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
+    /* ----------- Website Section ----------- */
+    .website-section {
+      background: #292929;
+      border-left: 5px solid #ff4d4d;
+      border-radius: 12px;
+      padding: 25px;
+      line-height: 1.8;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+    }
+
+    .website-section h3 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .website-section p {
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .website-section ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .website-section ul li {
+      margin: 6px 0;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #ff4d4d;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: #ff1a1a;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #bbb;
+      margin-top: 20px;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 20px;
+      }
+
+      .faculty-card {
+        width: 100%;
+      }
+
+      iframe {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+
+    <!-- --------- Faculty Section --------- -->
+    <div class="faculty-section">
+       <div class="faculty-card">
+        <img src="kupade.jpg" alt="Prof. D.M. Kupade">
+        <h4>Prof. D.M. Kupade</h4>
+        <p>+91 8788205048</p>
+      </div>
+      <div class="faculty-card">
+        <img src="sahil.jpg" alt="Mr. Sahil Chaurange">
+        <h4>Mr. Sahil Chaurange</h4>
+        <p>+91 7722004830</p>
+      </div>
+      <div class="faculty-card">
+        <img src="dhole.jpg" alt="Mr. Samarth Dhole">
+        <h4>Mr. Samarth Dhole</h4>
+        <p>+91 9307487633</p>
+      </div>
+     
+    </div>
+
+    <!-- --------- Contact Info --------- -->
+    <div class="contact-info">
+      <h3>General Contact</h3>
+      <p><strong>Email:</strong>dmkupade_mech@jspmrscoe.edu.in</p>
+      <h3>Student Co-Ordinaters </h3>
+      <p><strong>Athrava Shalva :</strong>93739 81942</p>
+      <p><strong>Mukul Chaudhari :</strong>81693 97688</p>
+      <p><strong>Anil KamaShetty :</strong>96998 57815</p>
+      <p><strong>Radhika Tiruke : </strong>97648 84011</p>
+
+      <h3>Website By </h3>
+      <p><strong>Vipul Meshram</strong></p>
+      <p><strong>Email :</strong>vipulmeshramv20@gmail.com</p>
+      <p><strong>Contact :</strong>87672 90623</p>
+
+      <h3>Address</h3>
+      <p>
+        Mechanical Engineering Department (D-Building),<br>
+        JSPM's Rajarshi Shahu College Of Engineering, Tathawade, Pune-33
+      </p>
+    </div>
+
+    <!-- --------- Map --------- -->
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.426660633041!2d73.74713411489463!3d18.618575087360568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9a35c5a8d2b%3A0x8dc5b8d9f0d19647!2sJSPM's%20Rajarshi%20Shahu%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1692898123456!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- --------- Website Section --------- -->
+    <div class="website-section">
+  <div style="text-align: center; margin-bottom: 15px;">
+    <img src="web_agency_logo.png" alt="Agency Logo" style="width: 120px; border-radius: 10px;">
+  </div>
+
+  <h3>Want to Create a Website for Your Club, Event, or Project?</h3>
+  <ul>
+    <li>✅ Custom designs with modern UI</li>
+    <li>✅ Mobile responsive & fast</li>
+    <li>✅ Event registration & contact forms</li>
+    <li>✅ Hosting and deployment support</li>
+  </ul>
+  <p>Bring your ideas online — let’s make something awesome together 🚀</p>
+  <div style="text-align: center;">
+    <a href="https://www.instagram.com/vipul.ism" class="cta-btn">Get Your Website !</a>
+  </div>
+</div>
+
+
+    <footer>
+      © 2025 | Designed and Developed By Vipul Meshram with ❤️
+    </footer>
+  </div>
+
+</body>
+</html>

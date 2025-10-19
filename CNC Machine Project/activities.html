@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Year Selection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #141414 60%, #e63946 100%);
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #e63946;
+      margin-bottom: 50px;
+      font-size: 36px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .options {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .option-link {
+      text-decoration: none;
+    }
+
+    .option {
+      background-color: #1c1c1c;
+      border: 2px solid #e63946;
+      border-radius: 20px;
+      padding: 70px 50px;
+      width: 300px;
+      height: 200px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px rgba(230, 57, 70, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .option:hover {
+      background-color: #e63946;
+      color: #fff;
+      transform: scale(1.07) translateY(-8px);
+      box-shadow: 0 0 25px rgba(230, 57, 70, 0.7);
+    }
+
+    .option h2 {
+      margin: 0 0 15px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .option p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .option:hover p {
+      color: #fff;
+    }
+
+    #summary {
+      margin-top: 50px;
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .option {
+        width: 85%;
+        height: 180px;
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Academic Year</h1>
+  <div class="options" id="options">
+    <a href="2022-23.html" class="option-link">
+      <div class="option" data-id="2022-23">
+        <h2>2022-23</h2>
+        <p>Activities and programs for 2022-23</p>
+      </div>
+    </a>
+
+    <a href="2025-26.html" class="option-link">
+      <div class="option" data-id="2024-25">
+        <h2>2024-25</h2>
+        <p>Activities and programs for 2024-25</p>
+      </div>
+    </a>
+  </div>
+</body>
+</html>
