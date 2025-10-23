@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activities 2022-23</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1c1c1c;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background: linear-gradient(135deg, #b22222, #8b0000);
+      text-align: center;
+      padding: 30px 20px;
+      color: white;
+      box-shadow: 0 4px 15px rgba(178, 34, 34, 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ---------- CONTENT ---------- */
+    .content {
+      max-width: 1200px;
+      width: 100%;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+      flex: 1;
+    }
+
+    h2 {
+      color: #ff4d4d;
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+
+    p {
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    /* ---------- IMAGES SECTION ---------- */
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .img-box {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #000;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .img-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .img-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(255, 50, 50, 0.5);
+    }
+
+    .img-box:hover::before {
+      opacity: 1;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .img-box:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Image caption */
+    .img-box::after {
+      content: attr(data-caption);
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .img-box:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- LIGHTBOX ---------- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(255, 77, 77, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      color: #ff4d4d;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-top: auto;
+      border-top: 2px solid #b22222;
+    }
+
+    footer strong {
+      color: #ff4d4d;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      header {
+        padding: 25px 15px;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      .content {
+        margin: 30px 20px;
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .images {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .img-box {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 20px 10px;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      .content {
+        margin: 20px 15px;
+        padding: 25px 15px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+      }
+
+      .images {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .img-box {
+        height: 220px;
+      }
+
+      footer {
+        font-size: 0.85rem;
+        padding: 15px;
+      }
+
+      .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Activities of 2024-25</h1>
+  </header>
+
+  <div class="content">
+    <h2>Photo Gallery</h2>
+    <div class="images">
+      <div class="img-box" data-caption="Izod Test Piece Manufacturing">
+        <img src="24_1.jpg" alt="Izod Test Piece Manufacturing - Step 1">
+      </div>
+      <div class="img-box" data-caption="Slotting Operation on CNC">
+        <img src="24_2.jpg" alt="Slotting Operation on CNC Machine">
+      </div>
+      <div class="img-box" data-caption="Workshop Activity">
+        <img src="24_3.jpg" alt="Workshop Activity">
+      </div>
+      <div class="img-box" data-caption="Student Project">
+        <img src="24_4.jpg" alt="Student Project">
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged view">
+  </div>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Designed & Developed by <strong>Vipul Meshram</strong></p>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lightbox functionality
+    const imgBoxes = document.querySelectorAll('.img-box img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    imgBoxes.forEach(img => {
+      img.addEventListener('click', function() {
+        lightbox.classList.add('active');
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+      });
+    });
+
+    lightboxClose.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

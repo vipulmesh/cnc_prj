@@ -7,12 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <style>
     /* ----------- Global Styles ----------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #2b2b2b, #3d3d3d);
       color: #f5f5f5;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,7 +29,7 @@
       background: #1e1e1e;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
-      width: 90%;
+      width: 100%;
       max-width: 900px;
       padding: 40px;
       display: flex;
@@ -37,29 +43,31 @@
       text-align: center;
       margin-bottom: 10px;
       letter-spacing: 1px;
+      font-size: 28px;
     }
 
     /* ----------- Faculty Section ----------- */
     .faculty-section {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      justify-content: center;
+      justify-items: center;
     }
 
     .faculty-card {
       background: #2d2d2d;
       border-radius: 15px;
       padding: 15px;
-      width: 200px;
+      width: 100%;
+      max-width: 220px;
       text-align: center;
       border: 1px solid #ff4d4d33;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .faculty-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(255, 77, 77, 0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
     }
 
     .faculty-card img {
@@ -69,16 +77,19 @@
       border-radius: 12px;
       margin-bottom: 10px;
       border: 2px solid #ff4d4d;
+      display: block;
     }
 
     .faculty-card h4 {
-      margin: 5px 0;
+      margin: 10px 0 5px;
       color: #ff4d4d;
+      font-size: 16px;
     }
 
     .faculty-card p {
       font-size: 14px;
       margin: 2px 0;
+      color: #e0e0e0;
     }
 
     /* ----------- Contact Info ----------- */
@@ -93,11 +104,18 @@
     .contact-info h3 {
       color: #ff4d4d;
       margin-bottom: 10px;
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    .contact-info h3:first-child {
+      margin-top: 0;
     }
 
     .contact-info p {
       margin: 8px 0;
       font-size: 15px;
+      word-wrap: break-word;
     }
 
     .contact-info strong {
@@ -114,13 +132,14 @@
     }
 
     .map-container:hover {
-      transform: scale(1.02);
+      transform: scale(1.01);
     }
 
     iframe {
       width: 100%;
-      height: 300px;
+      height: 350px;
       border: 0;
+      display: block;
     }
 
     /* ----------- Website Section ----------- */
@@ -133,25 +152,41 @@
       box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
     }
 
+    .website-section .logo-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .website-section .logo-container img {
+      width: 120px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
     .website-section h3 {
       color: #ff4d4d;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-align: center;
+      font-size: 18px;
     }
 
     .website-section p {
       text-align: center;
       font-size: 15px;
+      margin: 10px 0;
     }
 
     .website-section ul {
       list-style: none;
       padding: 0;
-      text-align: center;
+      text-align: left;
+      max-width: 400px;
+      margin: 15px auto;
     }
 
     .website-section ul li {
-      margin: 6px 0;
+      margin: 8px 0;
+      padding-left: 5px;
     }
 
     .cta-btn {
@@ -159,16 +194,22 @@
       margin-top: 15px;
       background: #ff4d4d;
       color: white;
-      padding: 10px 25px;
+      padding: 12px 30px;
       border-radius: 25px;
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
     }
 
     .cta-btn:hover {
       background: #ff1a1a;
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
+    }
+
+    .cta-container {
+      text-align: center;
     }
 
     footer {
@@ -177,20 +218,108 @@
       color: #bbb;
       margin-top: 20px;
       border-top: 1px solid #444;
-      padding-top: 10px;
+      padding-top: 15px;
     }
 
-    @media (max-width: 600px) {
+    /* ----------- Responsive Design ----------- */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
       .contact-container {
-        padding: 20px;
+        padding: 25px 20px;
+        gap: 25px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .faculty-section {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
       }
 
       .faculty-card {
-        width: 100%;
+        max-width: 100%;
+      }
+
+      .faculty-card img {
+        height: 180px;
+      }
+
+      .contact-info {
+        padding: 15px;
+      }
+
+      .contact-info h3 {
+        font-size: 16px;
+      }
+
+      .contact-info p {
+        font-size: 14px;
+      }
+
+      iframe {
+        height: 280px;
+      }
+
+      .website-section {
+        padding: 20px;
+      }
+
+      .website-section h3 {
+        font-size: 16px;
+      }
+
+      .website-section p {
+        font-size: 14px;
+      }
+
+      .cta-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .contact-container {
+        padding: 20px 15px;
+        border-radius: 15px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .faculty-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .faculty-card {
+        max-width: 100%;
+      }
+
+      .faculty-card img {
+        height: 220px;
       }
 
       iframe {
         height: 250px;
+      }
+
+      .website-section ul {
+        text-align: center;
+      }
+
+      footer {
+        font-size: 12px;
       }
     }
   </style>
@@ -202,7 +331,7 @@
 
     <!-- --------- Faculty Section --------- -->
     <div class="faculty-section">
-       <div class="faculty-card">
+      <div class="faculty-card">
         <img src="kupade.jpg" alt="Prof. D.M. Kupade">
         <h4>Prof. D.M. Kupade</h4>
         <p>+91 8788205048</p>
@@ -217,28 +346,29 @@
         <h4>Mr. Samarth Dhole</h4>
         <p>+91 9307487633</p>
       </div>
-     
     </div>
 
     <!-- --------- Contact Info --------- -->
     <div class="contact-info">
       <h3>General Contact</h3>
-      <p><strong>Email:</strong>dmkupade_mech@jspmrscoe.edu.in</p>
-      <h3>Student Co-Ordinaters </h3>
-      <p><strong>Athrava Shalva :</strong>93739 81942</p>
-      <p><strong>Mukul Chaudhari :</strong>81693 97688</p>
-      <p><strong>Anil KamaShetty :</strong>96998 57815</p>
-      <p><strong>Radhika Tiruke : </strong>97648 84011</p>
+      <p><strong>Email:</strong> dmkupade_mech@jspmrscoe.edu.in</p>
+      
+      <h3>Student Co-ordinators</h3>
+      <p><strong>Athrava Shalva:</strong> 93739 81942</p>
+      <p><strong>Mukul Chaudhari:</strong> 81693 97688</p>
+      <p><strong>Anil KamaShetty:</strong> 96998 57815</p>
+      <p><strong>Radhika Tiruke:</strong> 97648 84011</p>
 
-      <h3>Website By </h3>
+      <h3>Website By</h3>
       <p><strong>Vipul Meshram</strong></p>
-      <p><strong>Email :</strong>vipulmeshramv20@gmail.com</p>
-      <p><strong>Contact :</strong>87672 90623</p>
+      <p><strong>Email:</strong> vipulmeshramv20@gmail.com</p>
+      <p><strong>Contact:</strong> 87672 90623</p>
 
       <h3>Address</h3>
       <p>
         Mechanical Engineering Department (D-Building),<br>
-        JSPM's Rajarshi Shahu College Of Engineering, Tathawade, Pune-33
+        JSPM's Rajarshi Shahu College Of Engineering,<br>
+        Tathawade, Pune-33
       </p>
     </div>
 
@@ -248,32 +378,32 @@
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.426660633041!2d73.74713411489463!3d18.618575087360568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9a35c5a8d2b%3A0x8dc5b8d9f0d19647!2sJSPM's%20Rajarshi%20Shahu%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1692898123456!5m2!1sen!2sin" 
         allowfullscreen="" 
         loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
+        referrerpolicy="no-referrer-when-downgrade"
+        title="JSPM College Location">
       </iframe>
     </div>
 
     <!-- --------- Website Section --------- -->
     <div class="website-section">
-  <div style="text-align: center; margin-bottom: 15px;">
-    <img src="web_agency_logo.png" alt="Agency Logo" style="width: 120px; border-radius: 10px;">
-  </div>
+      <div class="logo-container">
+        <img src="web_agency_logo.png" alt="Agency Logo">
+      </div>
 
-  <h3>Want to Create a Website for Your Club, Event, or Project?</h3>
-  <ul>
-    <li>✅ Custom designs with modern UI</li>
-    <li>✅ Mobile responsive & fast</li>
-    <li>✅ Event registration & contact forms</li>
-    <li>✅ Hosting and deployment support</li>
-  </ul>
-  <p>Bring your ideas online — let’s make something awesome together 🚀</p>
-  <div style="text-align: center;">
-    <a href="https://www.instagram.com/vipul.ism" class="cta-btn">Get Your Website !</a>
-  </div>
-</div>
-
+      <h3>Want to Create a Website for Your Startup's, Event, or Project?</h3>
+      <ul>
+        <li>✅ Custom designs with modern UI</li>
+        <li>✅ Mobile responsive & fast</li>
+        <li>✅ Event registration & contact forms</li>
+        <li>✅ Hosting and deployment support</li>
+      </ul>
+      <p>Bring your ideas online — let's make something awesome together 🚀</p>
+      <div class="cta-container">
+        <a href="https://www.instagram.com/vipul.ism" class="cta-btn" target="_blank" rel="noopener noreferrer">Get Your Website!</a>
+      </div>
+    </div>
 
     <footer>
-      © 2025 | Designed and Developed By Vipul Meshram with ❤️
+      © 2025 | Designed and Developed By Vipul Meshram
     </footer>
   </div>
 

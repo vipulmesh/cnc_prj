@@ -10,26 +10,33 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(60px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .fade-in-up {
       animation: fadeInUp 1s ease-out forwards;
     }
+
     .hover-lift {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .hover-lift:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
+
     .glass-effect {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     .gradient-text {
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       -webkit-background-clip: text;
@@ -42,23 +49,28 @@
 
   <!-- HEADER -->
   <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-stone-200/50 shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
-      <h1 class="text-2xl lg:text-3xl font-extrabold text-red-600 tracking-tight">Centre Of Excellence</h1>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <h1 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-red-600 tracking-tight">
+        Centre Of Excellence
+      </h1>
 
-      <nav class="hidden md:flex items-center space-x-8 text-stone-700 font-semibold text-sm">
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-stone-700 font-semibold text-sm">
         <a href="projects.html" class="hover:text-green-700 transition-colors">Projects</a>
         <a href="activities.html" class="hover:text-green-700 transition-colors">Year-Wise Activities</a>
         <a href="contact.html" class="hover:text-green-700 transition-colors">Contact</a>
       </nav>
 
+      <!-- Mobile Menu Button -->
       <button id="menu-btn" class="md:hidden text-stone-700 hover:text-green-700 transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
     </div>
 
-    <!-- MOBILE MENU -->
+    <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden bg-white/95 backdrop-blur-lg shadow-xl md:hidden">
       <a href="projects.html" class="block px-6 py-4 border-b border-stone-100 hover:bg-green-50 transition-colors">Projects</a>
       <a href="activities.html" class="block px-6 py-4 border-b border-stone-100 hover:bg-green-50 transition-colors">Year-Wise Activities</a>
@@ -67,12 +79,12 @@
   </header>
 
   <!-- HERO -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden" style="background-image: url('bg3b.jpg'); background-size: cover; background-position: center;">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden" style="background-image: url('bg.jpg'); background-size: cover; background-position: center;">
     <div class="absolute inset-0 bg-gradient-to-br from-red-400/80 via-red-500/60 to-orange-400/50"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 py-20">
-      <h1 class="mt-10 text-5xl md:text-7xl font-extrabold fade-in-up">Centre Of Excellence</h1>
-      <p class="mt-6 text-2xl md:text-3xl font-light tracking-wide">CNC and VMC Machines</p>
-      <div class="mt-12 flex gap-4 justify-center flex-wrap">
+    <div class="relative z-10 max-w-3xl sm:max-w-4xl mx-auto px-4 sm:px-6 py-24 md:py-32">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold fade-in-up">Centre Of Excellence</h1>
+      <p class="mt-6 text-xl sm:text-2xl md:text-3xl font-light tracking-wide">CNC and VMC Machines</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#about" class="px-8 py-4 bg-white text-red-800 font-bold rounded-full hover:bg-red-50 transition-all transform hover:scale-105 shadow-xl">Learn More</a>
         <a href="https://forms.gle/wdxa8ykvr2q7EMnD6" class="px-8 py-4 glass-effect text-white font-bold rounded-full hover:bg-white/20 transition-all transform hover:scale-105 shadow-xl">Get in Touch</a>
       </div>
@@ -80,12 +92,12 @@
   </section>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <img src="about_pic.jpg" alt="About" class="rounded-2xl shadow-2xl hover-lift">
+  <section id="about" class="py-20 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <img src="about_pic.jpg" alt="About" class="rounded-2xl shadow-2xl hover-lift w-full h-auto object-cover">
       <div>
-        <h2 class="text-4xl font-bold text-red-700 mb-6">About Us</h2>
-        <p class="text-lg text-stone-700 leading-relaxed">
+        <h2 class="text-3xl sm:text-4xl font-bold text-red-700 mb-6">About Us</h2>
+        <p class="text-base sm:text-lg text-stone-700 leading-relaxed">
           The High Speed Machining Centre is established to provide students with practical exposure to advanced manufacturing technologies. The cell focuses on training students in Computer Numerical Control (CNC) and Vertical Machining Center (VMC) operations, programming, and component manufacturing. Through hands-on workshops, industrial visits, and live projects, students gain valuable skills in precision machining, tool path planning, and automation. The club encourages innovation, teamwork, and technical excellence, preparing students for careers in modern manufacturing industries.
         </p>
       </div>
@@ -93,39 +105,43 @@
   </section>
 
   <!-- FOOTER -->
-  <footer id="contact" class="relative bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 text-stone-200 pt-24 pb-10 overflow-hidden">
+  <footer id="contact" class="relative bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 text-stone-200 pt-20 sm:pt-24 pb-10 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-0 left-0 w-96 h-96 bg-green-400 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-green-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-emerald-400 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-16">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
       <div>
-        <h3 class="text-2xl font-bold text-white mb-4">Centre Of Excellence</h3>
+        <h3 class="text-2xl font-bold text-white mb-3">Centre Of Excellence</h3>
         <p class="text-stone-300 text-lg">CNC and VMC Machines</p>
       </div>
 
       <div>
-        <h3 class="text-2xl font-bold text-white mb-4">Get In Touch</h3>
-        <p><strong>Faculties:</strong></p>
+        <h3 class="text-2xl font-bold text-white mb-3">Get In Touch</h3>
+        <p class="text-sm sm:text-base"><strong>Faculties:</strong></p>
         <p>&gt; <strong>Mr. Sahil Chaurange:</strong> 7722004830</p>
         <p>&gt; <strong>Mr. Samarth Dhole:</strong> 9307487633</p>
         <p>&gt; <strong>Prof. D.M. Kupade:</strong> 8788205048</p>
-        <p>---</p>
+        <p class="my-2">---</p>
         <p><strong>Email:</strong> dmkupade_mech@jspmrscoe.edu.in</p>
       </div>
 
       <div>
-        <h3 class="text-2xl font-bold text-white mb-4">Follow Us</h3>
-        <div class="flex gap-5">
-          <a href="#" class="hover:scale-110 transition-transform"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" /></a>
-          <a href="https://www.instagram.com/rscoe_machininghub" class="hover:scale-110 transition-transform"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" /></a>
+        <h3 class="text-2xl font-bold text-white mb-3">Follow Us</h3>
+        <div class="flex gap-4 sm:gap-5">
+          <a href="#" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
+          <a href="https://www.instagram.com/rscoe_machininghub" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" class="w-10 h-10 sm:w-12 sm:h-12" />
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="relative mt-16 border-t border-green-700/50 pt-8 text-center">
-      <p class="text-stone-400 text-sm">&copy; <span id="year"></span> | Designed & Developed by <strong>Vipul Meshram</strong> ❤️</p>
+    <div class="relative mt-12 border-t border-green-700/50 pt-6 text-center">
+      <p class="text-stone-400 text-xs sm:text-sm">&copy; <span id="year"></span> | Designed & Developed by <strong>Vipul Meshram</strong></p>
     </div>
   </footer>
 

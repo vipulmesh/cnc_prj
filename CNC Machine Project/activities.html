@@ -4,25 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Academic Year Selection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #0b0b0b;
+      background: linear-gradient(135deg, #141414 60%, #e63946 100%);
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #141414 60%, #e63946 100%);
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
     }
 
     h1 {
       color: #e63946;
       margin-bottom: 50px;
-      font-size: 36px;
+      font-size: 2.5rem;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -32,68 +33,98 @@
       gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
+      width: 100%;
+      max-width: 900px;
+      padding: 0 20px;
     }
 
     .option-link {
       text-decoration: none;
+      width: 100%;
+      max-width: 320px;
+      flex: 1 1 280px;
     }
 
     .option {
       background-color: #1c1c1c;
       border: 2px solid #e63946;
       border-radius: 20px;
-      padding: 70px 50px;
-      width: 300px;
+      padding: 60px 30px;
       height: 200px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 20px rgba(230, 57, 70, 0.1);
+      box-shadow: 0 0 20px rgba(230, 57, 70, 0.15);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.4s ease;
     }
 
-    .option:hover {
+    .option:hover,
+    .option:active {
       background-color: #e63946;
       color: #fff;
-      transform: scale(1.07) translateY(-8px);
+      transform: scale(1.05) translateY(-6px);
       box-shadow: 0 0 25px rgba(230, 57, 70, 0.7);
     }
 
     .option h2 {
-      margin: 0 0 15px;
-      font-size: 26px;
+      margin: 0 0 10px;
+      font-size: 1.8rem;
       font-weight: 700;
     }
 
     .option p {
-      font-size: 16px;
+      font-size: 1rem;
       color: #ccc;
+      line-height: 1.5;
     }
 
     .option:hover p {
       color: #fff;
     }
 
-    #summary {
-      margin-top: 50px;
-      font-size: 18px;
-      color: #ccc;
-    }
-
+    /* Responsive design */
     @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
       .option {
-        width: 85%;
         height: 180px;
         padding: 40px 20px;
       }
     }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .option {
+        height: auto;
+        padding: 30px 15px;
+      }
+
+      .option h2 {
+        font-size: 1.5rem;
+      }
+
+      .option p {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <h1>Select Academic Year</h1>
-  <div class="options" id="options">
+  <div class="options">
     <a href="2022-23.html" class="option-link">
       <div class="option" data-id="2022-23">
         <h2>2022-23</h2>
@@ -101,7 +132,7 @@
       </div>
     </a>
 
-    <a href="2025-26.html" class="option-link">
+    <a href="2024-25.html" class="option-link">
       <div class="option" data-id="2024-25">
         <h2>2024-25</h2>
         <p>Activities and programs for 2024-25</p>
